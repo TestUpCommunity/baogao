@@ -1,4 +1,3 @@
-
 # baogao
 baogao is the a test report tool or library for generating test report
 
@@ -20,7 +19,7 @@ master：主分支。当每次release分支合入主分支后，在主分支上�
 bug的发现和修复同理。
 
 3. 项目的模块划分：
-'''
+```
 
 baogao
  |= templates------模板模块
@@ -40,7 +39,7 @@ baogao
  |
  |- doc----------文档模块，用于写文档。
 
-'''
+```
 
  
  
