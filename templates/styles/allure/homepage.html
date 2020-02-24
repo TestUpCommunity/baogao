@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 40%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+
+graphic: [
+         {
+            type: 'group',
+            left: '50',
+            top: '60',
+            children: [
+			{
+                    type: 'text',
+                    left: '0',
+                    top: '5',
+                    style: {
+						fill: "#999999",
+                        text: [
+                            '21:50:39 - 22:05:53 (15m 13s)'
+                        ].join('\n'),
+                        font: 'bold 15px Microsoft YaHei'			
+                    },
+
+
+                },           
+                {
+
+                    type: 'text',
+                    left: '50',
+                    top: '50',
+                    style: {
+                        fill: '#333',
+                        text: [
+                            '21',
+                        ].join('\n'),
+                        font: '75px Microsoft YaHei'
+                    }
+                },                
+				{
+                    type: 'text',
+                    left: '46',
+
+                    top: '120',
+
+                    style: {
+
+                        fill: "#999999",
+
+                        text: [
+
+                            'test cases',
+
+
+
+                        ].join('\n'),
+
+                        font: '19px Microsoft YaHei'
+
+                    }
+
+                }
+
+            ]
+
+        }
+
+    ],
+	
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+	        title: {
+            text: 'TEST REPORT 10/10/2014',
+            x: '45',
+			y: '30',
+			font: '32px'
+        },
+
+    series: [
+        {
+            name: 'Test Result',
+            type: 'pie',
+			x: '0',
+            radius: ['60%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'center',
+					formatter:function(argument){
+					var html;
+					html="42.85%";
+					return html;
+					},
+					textStyle:{
+					fontSize:15,
+					color:'#2c2c2c'
+					}
+                },
+				
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data: [
+                {value: 95, name: 'Pass',itemStyle:{color: '#97cc64'}},
+                {value: 21, name: 'Fail',itemStyle:{color: '#fd5a3e'}},
+                {value: 23, name: 'Unknow',itemStyle:{color: '#aaaaaa'}},
+            ]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
